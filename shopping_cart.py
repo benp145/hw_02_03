@@ -33,7 +33,7 @@ class Cart:
             if deleted_item == self.items[i].name:
                 del self.items[i]
                 print(f'{deleted_item} deleted from cart. \n')
-                return
+                return #this return prevents an indexing error. this means the function operates by only removing one occurance of item
 
         print("Item not found in your cart.\n")
 
