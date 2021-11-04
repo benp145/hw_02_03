@@ -34,26 +34,34 @@ class Cart:
                 del self.items[i]
                 print(f'{deleted_item} deleted from cart. \n')
                 return
+        # for item in self.items:
+        #     if deleted_item == item.name:
+        #         del item
+        #         print(f'{deleted_item} deleted from cart. \n')
+        #         return
+
+        # I tried doing the for loop for this function two different ways, and the second one didn't work, so I kept the first one
+
         print("Item not found in your cart.\n")
 
 
-def shopping(cart):
-    if cart.shop == 'y':
+def shopping(cart_instance):
+    if cart_instance.shop == 'y':
        print("""
 Enter 'add' to add a new item to your cart.
 Enter 'show' to see all items in your cart.
 Enter 'delete' to delete an item from your cart.
 Press 'quit' to end program. \n""","="*8)
-    while cart.shop == 'y':
+    while cart_instance.shop == 'y':
         print("What would you like to do?")
         prompt = input("Add | Show | Delete | Quit ").lower()
         print('\n')
         if prompt == 'add':
-            cart.add_item()
+            cart_instance.add_item()
         elif prompt == 'show':
-            cart.show_cart()
+            cart_instance.show_cart()
         elif prompt == 'delete':
-            cart.remove_item()
+            cart_instance.remove_item()
         elif prompt == 'quit':
             quit = input("Are you sure you want to quit? (y/n): ").lower()
             if quit == 'y':
