@@ -30,17 +30,10 @@ class Cart:
     def remove_item(self):
         deleted_item = input("What item would you like to delete? ").title()
         for i in range(len(self.items)):
-            if deleted_item == str(self.items[i]):
+            if deleted_item == self.items[i].name:
                 del self.items[i]
                 print(f'{deleted_item} deleted from cart. \n')
                 return
-        # for item in self.items:
-        #     if deleted_item == item.name:
-        #         del item
-        #         print(f'{deleted_item} deleted from cart. \n')
-        #         return
-
-        # I tried doing the for loop for this function two different ways, and the second one didn't work, so I kept the first one
 
         print("Item not found in your cart.\n")
 
